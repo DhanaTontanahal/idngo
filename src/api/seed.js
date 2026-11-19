@@ -1,0 +1,302 @@
+function placeholder(title, caption) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600">
+    <rect width="960" height="600" fill="#E6F2EC"/>
+    <rect x="36" y="36" width="888" height="528" rx="18" fill="#FFFFFF" stroke="#006747" stroke-width="6"/>
+    <text x="480" y="270" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="36" font-weight="700" fill="#04261C">${title}</text>
+    <text x="480" y="326" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" fill="#3C5148">${caption}</text>
+  </svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+function attachedDocument({ documentType, fileName, uploadedAt, uploadedBy, caption }) {
+  return {
+    documentType,
+    fileName,
+    dataUrl: placeholder(documentType, caption),
+    uploadedAt,
+    uploadedBy,
+  };
+}
+
+export function createSeedApplications() {
+  return [
+    {
+      reference: 'CC482910',
+      status: 'documents_required',
+      decision: 'Approved in principle',
+      channel: 'Online',
+      appliedAt: '2026-11-12T09:24:00.000Z',
+      customer: {
+        title: 'Ms',
+        firstName: 'Amira',
+        lastName: 'Shah',
+        dateOfBirth: '1992-04-18',
+        email: 'amira.shah@example.com',
+        mobile: '07700 900184',
+        nationality: 'British',
+      },
+      address: {
+        line1: '14 Maple Court',
+        line2: 'Queen Street',
+        city: 'Manchester',
+        postcode: 'M2 4WU',
+        residentSince: '2019-06',
+      },
+      product: {
+        name: 'Lloyds Platinum Mastercard',
+        code: 'PLT-MC',
+        requestedLimit: 4000,
+        approvedLimit: 3500,
+        apr: '27.9% APR variable',
+      },
+      employment: {
+        status: 'Employed',
+        employer: 'Northbridge Analytics',
+        income: 42000,
+      },
+      documents: { identity: null, address: null },
+      cancellation: null,
+      account: null,
+    },
+    {
+      reference: 'CC573024',
+      status: 'ready_to_activate',
+      decision: 'Approved in principle',
+      channel: 'Online',
+      appliedAt: '2026-11-16T14:02:00.000Z',
+      customer: {
+        title: 'Mr',
+        firstName: 'James',
+        lastName: 'Okonkwo',
+        dateOfBirth: '1987-09-03',
+        email: 'james.okonkwo@example.com',
+        mobile: '07700 900221',
+        nationality: 'British',
+      },
+      address: {
+        line1: '8 Harbour Lane',
+        line2: 'Digbeth',
+        city: 'Birmingham',
+        postcode: 'B5 5TE',
+        residentSince: '2016-03',
+      },
+      product: {
+        name: 'Lloyds Rewards Mastercard',
+        code: 'RWD-MC',
+        requestedLimit: 6000,
+        approvedLimit: 5000,
+        apr: '29.9% APR variable',
+      },
+      employment: {
+        status: 'Employed',
+        employer: 'Hartwell Engineering',
+        income: 51000,
+      },
+      documents: {
+        identity: attachedDocument({
+          documentType: 'UK passport',
+          fileName: 'passport-on-file.svg',
+          uploadedAt: '2026-11-17T10:18:00.000Z',
+          uploadedBy: 'Jordan Hale',
+          caption: 'Held on the application',
+        }),
+        address: attachedDocument({
+          documentType: 'Utility bill',
+          fileName: 'utility-bill-on-file.svg',
+          uploadedAt: '2026-11-17T10:21:00.000Z',
+          uploadedBy: 'Jordan Hale',
+          caption: 'Held on the application',
+        }),
+      },
+      cancellation: null,
+      account: null,
+    },
+    {
+      reference: 'CC610887',
+      status: 'in_progress',
+      decision: 'Approved in principle',
+      channel: 'Online',
+      appliedAt: '2026-11-15T11:47:00.000Z',
+      customer: {
+        title: 'Mrs',
+        firstName: 'Helen',
+        lastName: 'Fraser',
+        dateOfBirth: '1979-01-29',
+        email: 'helen.fraser@example.com',
+        mobile: '07700 900308',
+        nationality: 'British',
+      },
+      address: {
+        line1: '22 Roseburn Place',
+        line2: '',
+        city: 'Edinburgh',
+        postcode: 'EH12 5PQ',
+        residentSince: '2008-08',
+      },
+      product: {
+        name: 'Lloyds Cashback Mastercard',
+        code: 'CSH-MC',
+        requestedLimit: 2500,
+        approvedLimit: 2500,
+        apr: '24.9% APR variable',
+      },
+      employment: {
+        status: 'Employed',
+        employer: 'City of Edinburgh Council',
+        income: 38500,
+      },
+      documents: { identity: null, address: null },
+      cancellation: null,
+      account: null,
+    },
+    {
+      reference: 'CC105672',
+      status: 'documents_required',
+      decision: 'Approved in principle',
+      channel: 'Online',
+      appliedAt: '2026-11-18T08:16:00.000Z',
+      customer: {
+        title: 'Ms',
+        firstName: 'Sophie',
+        lastName: 'Bennett',
+        dateOfBirth: '1998-12-07',
+        email: 'sophie.bennett@example.com',
+        mobile: '07700 900412',
+        nationality: 'British',
+      },
+      address: {
+        line1: '41 Cathedral Road',
+        line2: '',
+        city: 'Cardiff',
+        postcode: 'CF11 9HE',
+        residentSince: '2022-09',
+      },
+      product: {
+        name: 'Lloyds Premier Mastercard',
+        code: 'PRM-MC',
+        requestedLimit: 3000,
+        approvedLimit: 2000,
+        apr: '22.9% APR variable',
+      },
+      employment: {
+        status: 'Employed',
+        employer: 'Bay Radio Group',
+        income: 28000,
+      },
+      documents: {
+        identity: attachedDocument({
+          documentType: 'UK driving licence',
+          fileName: 'driving-licence-on-file.svg',
+          uploadedAt: '2026-11-18T15:02:00.000Z',
+          uploadedBy: 'Alex Morgan',
+          caption: 'Held on the application',
+        }),
+        address: null,
+      },
+      cancellation: null,
+      account: null,
+    },
+    {
+      reference: 'CC294451',
+      status: 'activated',
+      decision: 'Approved in principle',
+      channel: 'Online',
+      appliedAt: '2026-11-02T16:20:00.000Z',
+      customer: {
+        title: 'Mrs',
+        firstName: 'Priya',
+        lastName: 'Nair',
+        dateOfBirth: '1984-06-14',
+        email: 'priya.nair@example.com',
+        mobile: '07700 900533',
+        nationality: 'British',
+      },
+      address: {
+        line1: '5 Canal Wharf',
+        line2: '',
+        city: 'Leeds',
+        postcode: 'LS11 5QA',
+        residentSince: '2014-01',
+      },
+      product: {
+        name: 'Lloyds Platinum Mastercard',
+        code: 'PLT-MC',
+        requestedLimit: 8000,
+        approvedLimit: 6500,
+        apr: '27.9% APR variable',
+      },
+      employment: {
+        status: 'Self-employed',
+        employer: 'Nair Design Studio',
+        income: 46000,
+      },
+      documents: {
+        identity: attachedDocument({
+          documentType: 'UK passport',
+          fileName: 'passport-on-file.svg',
+          uploadedAt: '2026-11-03T09:40:00.000Z',
+          uploadedBy: 'Jordan Hale',
+          caption: 'Held on the application',
+        }),
+        address: attachedDocument({
+          documentType: 'Council tax bill',
+          fileName: 'council-tax-on-file.svg',
+          uploadedAt: '2026-11-03T09:44:00.000Z',
+          uploadedBy: 'Jordan Hale',
+          caption: 'Held on the application',
+        }),
+      },
+      cancellation: null,
+      account: {
+        accountNumber: '450000294451',
+        maskedPan: '4539 12•• •••• 4451',
+        activatedAt: '2026-11-04T15:40:00.000Z',
+        activatedBy: 'Jordan Hale',
+        note: 'Documents matched the applicant. Account opened on the desk.',
+      },
+    },
+    {
+      reference: 'CC881203',
+      status: 'cancelled',
+      decision: 'Approved in principle',
+      channel: 'Online',
+      appliedAt: '2026-11-08T10:05:00.000Z',
+      customer: {
+        title: 'Mr',
+        firstName: 'Thomas',
+        lastName: 'Reid',
+        dateOfBirth: '1990-02-21',
+        email: 'thomas.reid@example.com',
+        mobile: '07700 900646',
+        nationality: 'British',
+      },
+      address: {
+        line1: '19 Queen Square',
+        line2: '',
+        city: 'Bristol',
+        postcode: 'BS1 4NT',
+        residentSince: '2020-05',
+      },
+      product: {
+        name: 'Lloyds Rewards Mastercard',
+        code: 'RWD-MC',
+        requestedLimit: 5000,
+        approvedLimit: 4500,
+        apr: '29.9% APR variable',
+      },
+      employment: {
+        status: 'Employed',
+        employer: 'Severn Legal',
+        income: 57000,
+      },
+      documents: { identity: null, address: null },
+      cancellation: {
+        reason: 'Customer requested cancellation',
+        note: 'Customer called to say they no longer need the card.',
+        cancelledAt: '2026-11-09T11:05:00.000Z',
+        cancelledBy: 'Jordan Hale',
+      },
+      account: null,
+    },
+  ];
+}
